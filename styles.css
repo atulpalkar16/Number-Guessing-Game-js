@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --ff-body:  'Bungee', sans-serif;
+
+:root {
+    --ff-body: 'Bungee', sans-serif;
     --fw-body: 400;
 
     --lightBlack: #333;
@@ -14,39 +15,52 @@
     --green: limegreen;
     --yellow: rgb(200, 205, 50);
 }
-body{
+
+body {
     width: 100%;
     height: 100%;
     max-height: 100vh;
     font-size: 16px;
     line-height: 1.5;
-    
+
     font-family: var(--ff-body);
     font-weight: var(--fw-body);
     background-color: var(--lightBlack);
     color: #fff;
 }
 
-/* header */
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+h1,
+h2,
+h3,
+p {
+    word-wrap: break-word;
 }
-.hero{
+
+/* header */
+.header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+}
+
+/* hero */
+.hero {
+    padding: 2rem 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    padding: 2rem 0;
+    text-align: center;
 }
-.hero h1{
-    font-size: 2.5rem;
+
+.hero h1 {
+    font-size: 2rem;
     margin-bottom: 2rem;
 }
-.hero .secretNumber{
-    /* background-color: red; */
+
+.hero .secretNumber {
     width: 150px;
     height: 100px;
 
@@ -57,30 +71,36 @@ body{
 }
 
 /* stats */
-.stats{
+.stats {
     padding: 5rem 0;
+    text-align: center;
+}
+
+.stats .right {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    gap: 2rem;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+
 }
-.stats .right{
+
+.stats .left {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
 }
-.stats .left{
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.left .number{
+
+.left .number {
     border: solid black 4px;
     width: 200px;
     height: 100px;
-    color: hsl(210,97%,47%);
-    /* color: hsl(6,100%,50%); */
+    color: hsl(210, 97%, 47%);
 
     text-align: center;
     font-size: 3.5rem;
@@ -88,24 +108,50 @@ body{
 }
 
 /* utility */
-.container{
+.container {
     max-width: 1440px;
     height: 100%;
     margin: 0 auto;
     padding: 1rem 2rem;
 }
-.btn{
+
+.btn {
     border-radius: .5rem;
     padding: 1.2rem 2.5rem;
     font-size: 1.5rem;
     font-weight: bold;
     transition: all .3s ease-in-out;
-    border: solid black 3px;
-    /* border: solid white 5px; */
+    border: 3px solid black;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: var(--green);
     color: #fff;
     transform: scale(.98);
+}
+
+/* media  */
+@media (min-width: 786px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .stats {
+        padding: 5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .stats .right {
+        font-size: 2rem;
+        gap: 2rem;
+    }
 }
